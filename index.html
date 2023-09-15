@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+      body{
+        background-image: url(/images/bgimage.jpg);
+        background-size: cover;
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+      }
+      .container{
+        margin-top: 5%;
+        margin-left: 20%;
+        margin-right:20% ;
+      }
+      h1{
+        text-align: center;
+        padding-top: 10px !important;
+      }
+      #driveButton{
+        background-image: url('/images/Limo-Driver.jpg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 200px;
+        height: 150px;
+        color: aliceblue;
+
+      }
+      #washButton{
+        background-image: url('/images/car\ washer.jpg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 200px;
+        height: 150px;
+        color: aliceblue;
+      }
+      .driverInfo{
+        background-color: white;
+        width:max-content;
+        border-radius: 5px;
+      }
+      .driverInfo1{
+        background-color: white;
+        width: max-content;
+        border-radius: 5px;
+      }
+    </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>  
+
+      <h1>Call for help:</h1>
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <!-- Driver -->
+            <h4>Driver</h4>
+            <button id="driveButton">Drive my Car</button>
+            <p class="driverInfo"></p>
+          </div>
+          <div class="col">
+            <h4>Car Washer</h4>
+            <!-- Car Washer -->
+            <button id="washButton">Wash my Car</button>
+            <p class="driverInfo1"></p>
+          </div>
+          </div>
+
+      </div>
+
+  <script>
+    //Objection Construction Function
+
+    // this function is for driveButton only 
+    function Driver(name, age, workExperience) {
+      this.name = name;
+      this.age = age;
+      this.workExperience = workExperience;
+    //   alert('functioning');
+    }
+
+    document.querySelector('#driveButton').addEventListener('click', function () {
+      var inputName = new Driver('Ignacio Swabe', 31, true);
+
+      //diplay the information of the person: Toto
+
+      const createDriverInfoElement = document.querySelector('.driverInfo');
+        createDriverInfoElement.innerText = `Name of Service Staff: 
+        ${inputName.name} 
+        ${inputName.age} years old 
+        With work experience: ${inputName.workExperience}`;
+
+        
+    });
+
+    // another object construction function
+
+
+        // this function is for washButton only 
+        function Washer(name, age, workExperience) {
+      this.name = name;
+      this.age = age;
+      this.workExperience = workExperience;
+    //   alert('functioning');
+    }
+
+    document.querySelector('#washButton').addEventListener('click', function () {
+      var inputName1 = new Washer('Boboy DelaCruze', 20, true);
+
+      //diplay the information of the person: 
+
+      const createDriverInfoElement1 = document.querySelector('.driverInfo1');
+        createDriverInfoElement1.innerText = `Name of Service Staff: 
+        ${inputName1.name} 
+        ${inputName1.age} years old 
+        With work experience: ${inputName1.workExperience}`;
+
+    });
+
+  </script>
+</body>
+</html>
